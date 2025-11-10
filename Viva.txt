@@ -1,0 +1,341 @@
+Here’s a viva cheat sheet with answers in simple English for your practical exam questions based on the topics you mentioned (excluding practical 9, 11, and 14):
+
+
+---
+
+Node.js & File System
+
+1. How do you create a new file and write data into it using Node.js?
+
+Use fs.writeFile or fs.writeFileSync. Example:
+
+const fs = require('fs');
+fs.writeFileSync('student.txt', 'Hello Node.js');
+
+
+
+2. Which module in Node.js is used for file operations?
+
+The fs (File System) module.
+
+
+
+3. How can you read the contents of a file asynchronously?
+
+fs.readFile('student.txt', 'utf8', (err, data) => {
+  if(err) throw err;
+  console.log(data);
+});
+
+
+4. How do you delete a file in Node.js?
+
+Use fs.unlinkSync('filename') or fs.unlink('filename', callback).
+
+
+
+5. Difference between fs.readFile and fs.readFileSync?
+
+fs.readFile → asynchronous (non-blocking)
+
+fs.readFileSync → synchronous (blocks execution until done)
+
+
+
+
+
+---
+
+TypeScript Classes & Modules
+
+6. What is a module in TypeScript?
+
+A file that exports functions, classes, or variables to use in other files.
+
+
+
+7. How do you export a class and import it?
+
+// student.ts
+export class Student { ... }
+
+// main.ts
+import { Student } from './student';
+
+
+8. Use of properties and methods in a class?
+
+Properties store data.
+
+Methods perform actions on that data.
+
+
+
+9. How to calculate average of numbers in a TypeScript array?
+
+let avg = marks.reduce((a,b)=>a+b,0)/marks.length;
+
+
+10. Difference between export default and export
+
+export default → only one default export per file
+
+export → multiple named exports possible
+
+
+
+
+
+---
+
+HTTP Web Server
+
+11. How to create a simple HTTP server?
+
+const http = require('http');
+const server = http.createServer((req,res)=>{
+  res.write('Hello Node.js');
+  res.end();
+});
+server.listen(3000);
+
+
+12. Which module is used?
+
+The http module.
+
+
+
+13. How to make the server listen on a specific port?
+
+Use server.listen(portNumber). Example: server.listen(3000)
+
+
+
+14. What happens if port is in use?
+
+Node.js throws an error: EADDRINUSE.
+
+
+
+
+
+---
+
+TypeScript Functions & Modules
+
+15. How to create and export multiple functions?
+
+export function add(a,b){ return a+b; }
+export function subtract(a,b){ return a-b; }
+
+
+16. How to import specific functions?
+
+import { add, subtract } from './mathOperations';
+
+
+17. Example of addition and subtraction function in TypeScript
+
+function add(a:number,b:number){ return a+b; }
+function subtract(a:number,b:number){ return a-b; }
+
+
+18. Named export vs default export
+
+Named → import with { }
+
+Default → import without { }, only one per file
+
+
+
+
+
+---
+
+Angular Basics
+
+19. How to create a new Angular project?
+
+ng new project-name
+
+
+
+20. What is a component?
+
+A building block of Angular with HTML, CSS, and TypeScript.
+
+
+
+21. How to pass data from parent to child?
+
+Using @Input() decorator.
+
+
+
+22. What is property binding?
+
+Passing data from TS file to HTML using [property]="value".
+
+
+
+23. Use of FormsModule?
+
+Enables template-driven forms in Angular.
+
+
+
+24. Template-driven vs reactive form?
+
+Template-driven → simple, defined in HTML
+
+Reactive → complex, defined in TypeScript with FormGroup
+
+
+
+25. How to display form data after submission?
+
+Bind form fields with [(ngModel)] and show using interpolation {{}}.
+
+
+
+
+
+---
+
+Angular Pipes
+
+26. What are Angular pipes?
+
+Transform data in the template (like formatting).
+
+
+
+27. Examples of built-in pipes
+
+uppercase, lowercase, date, currency, percent
+
+
+
+28. How to format number as currency?
+
+{{ fees | currency:'INR' }}
+
+
+29. How to display full date?
+
+{{ todayDate | date:'fullDate' }}
+
+
+30. Transform text to uppercase or lowercase
+
+{{ studentName | uppercase }}
+{{ course | lowercase }}
+
+
+
+
+---
+
+Bootstrap & Responsive Design
+
+31. How to create responsive layout?
+
+Use container, row, and col classes.
+
+
+
+32. Purpose of container, row, col
+
+container → overall wrapper
+
+row → horizontal row
+
+col → divide row into columns
+
+
+
+33. How to make navbar sticky?
+
+Add class sticky-top to <nav>.
+
+
+
+34. How to make webpage mobile-friendly?
+
+Use media queries:
+
+@media(max-width:768px){ ... }
+
+
+
+35. Bootstrap classes for form inputs/buttons
+
+form-control → input
+
+btn btn-primary → button
+
+
+
+36. Add responsive image
+
+Use class img-fluid in <img> tag.
+
+
+
+37. Center-align text/icons
+
+Use text-center for text, d-flex justify-content-center for icons.
+
+
+
+
+
+---
+
+General Web Design
+
+38. Semantic vs non-semantic elements
+
+Semantic → meaningful like <header> <section>
+
+Non-semantic → <div>, <span> (no meaning)
+
+
+
+39. Examples of semantic elements
+
+<header>, <footer>, <article>, <section>, <nav>
+
+
+
+40. How to create contact form
+
+<form>
+  <input type="text" name="name">
+  <input type="email" name="email">
+  <textarea name="message"></textarea>
+</form>
+
+
+41. Difference between <section> and <div>
+
+<section> → groups related content semantically
+
+<div> → general container, no semantic meaning
+
+
+
+42. How to make a page responsive without framework?
+
+Use CSS flexbox, grid, percentages, and media queries.
+
+
+
+
+
+---
+
+If you want, I can also make a super-short one-page version of this cheat sheet that fits on a single sheet for quick last-minute revision.
+
+Do you want me to do that?
